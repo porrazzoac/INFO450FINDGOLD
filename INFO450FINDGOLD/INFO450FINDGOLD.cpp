@@ -1,11 +1,12 @@
-// INFO450FINDGOLD.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// INFO450FINDGOLD.cpp : This file contains the 'main' function. .
 //
 
 #include <iostream>
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    std::cout << "Hello Friends!\n";
+	
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
