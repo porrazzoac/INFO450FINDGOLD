@@ -5,7 +5,7 @@
 using namespace std;
 
 int i, j, i2, j2;
-//columns and rows of hiddenBoard and mineBoard
+//columns and rows of intialBoard and gameBoard
 int input1;
 int input2;
 int totalInput = 5;
