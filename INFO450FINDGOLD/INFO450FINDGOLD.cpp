@@ -94,40 +94,20 @@ int main()
 			cout << "Please enter a y-coordinate: " << endl;
 			cin >> input1;
 
-
-			if (gameBoard[input1 + 1][input2 + 1] == 'G')
+			if (input1 > 8 || input1 < 1)
 			{
-				cout << "You found gold!" << endl;
-				totalInput++;
-				countGold++;
-				cout << "There're " << totalInput << " attempts remaining " << endl;
-				gameBoard[input1 + 1][input2 + 1] = 'F';
-			}
-			//Gold found
-
-
-			else if (input1 > 8 || input1 < 1)
-			{
-				cout << "Sorry those coordinates are Invalid! They're not in range " << endl;
-				cout << "Please try again " << endl;
+			cout << "Sorry those coordinates are Invalid! They're not in range " << endl;
+			cout << "Please try again " << endl;
 			}
 
 
 
 			else if (input2 > 8 || input2 < 1)
 			{
-				cout << "Sorry those coordinates are Invalid! They're not in range " << endl;
-				cout << "Please try again " << endl;
+			cout << "Sorry those coordinates are Invalid! They're not in range " << endl;
+			cout << "Please try again " << endl;
 			}
 			//Valid coordinates in range
-
-
-			else if (gameBoard[input1 + 2][input2 + 2] == 'B')
-			{
-				cout << "Game Over! You hit the Bomb" << endl;
-				break;
-			}
-			//Bomb
 
 
 			else if (gameBoard[input1 + 1][input2 + 1] == ' ')
@@ -138,7 +118,7 @@ int main()
 				cout << "Sorry there was no gold at these coordinates " << endl;
 				cout << "There're " << totalInput << " attempts remaining " << endl;
 			}
-			//Inputed coordinates
+			//Inputed coordinates but misses
 
 
 			else if ((gameBoard[input1 + 1][input2 + 1] == 'X') || (gameBoard
@@ -150,6 +130,24 @@ int main()
 			}
 			//Repeated coordinates entered or found already
 
+
+			else if (gameBoard[input1 + 1][input2 + 1] == 'G')
+			{
+				cout << "You found gold!" << endl;
+				totalInput++;
+				countGold++;
+				cout << "There're " << totalInput << " attempts remaining " << endl;
+				gameBoard[input1 + 1][input2 + 1] = 'F';
+			}
+			//Gold found	
+
+
+			else if (gameBoard[input1 + 2][input2 + 2] == 'B')
+			{
+				cout << "Game Over! You hit the Bomb" << endl;
+				break;
+			}
+			//Bomb
 
 		} while ((countGold == 5)||(totalInput != 0));
 		//Checks which set of statements above the coordinates belongs to (G,F,B,X, etc) 
